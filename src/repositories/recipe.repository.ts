@@ -1,8 +1,8 @@
 import sql from 'mssql'
 import { FastifyBaseLogger } from 'fastify'
 
-export default class Analytics {
-  schema: string = 'analytics.'
+export default class Recipe {
+  schema: string = 'recipe.'
   _logger: FastifyBaseLogger
   _pool: sql.ConnectionPool
 
