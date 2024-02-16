@@ -46,8 +46,8 @@ export default async function (fastify: FastifyInstance) {
       if (recipe) return reply.success({ recipe }, 200, performance.now() - start)
       return reply.fail({ id: 'recipe not found!' }, 404, performance.now() - start)
     } catch (err) {
-      request.log.error({ err }, 'failed to get analytics dashboard!')
-      return reply.error('failed to get analytics dashboard!', 500, performance.now() - start)
+      request.log.error({ err }, 'failed to get recipe details!')
+      return reply.error('failed to get recipe details!', 500, performance.now() - start)
     }
   })
 
@@ -87,8 +87,8 @@ export default async function (fastify: FastifyInstance) {
       }
       return reply.fail({ id: 'recipe not found!' }, 404, performance.now() - start)
     } catch (err) {
-      request.log.error({ err }, 'failed to get analytics dashboard!')
-      return reply.error('failed to get analytics dashboard!', 500, performance.now() - start)
+      request.log.error({ err }, 'failed to generate recipe qrcode image!')
+      return reply.error('failed to generate recipe qrcode image!', 500, performance.now() - start)
     }
   })
 }
