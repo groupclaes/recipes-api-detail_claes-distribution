@@ -38,7 +38,6 @@ export default async function (fastify: FastifyInstance) {
       const ip = request.raw.headers['x-forwarded-for']?.toString()
       const referer = request.raw.headers['referer']
 
-
       const pool = await fastify.getSqlPool()
       const repo = new Recipe(request.log, pool)
       const recipe = await repo.read(id, culture, user_id, ip, referer, 2)
