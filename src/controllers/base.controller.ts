@@ -74,7 +74,7 @@ export default async function (fastify: FastifyInstance) {
 
       if (recipe) {
         const url = `https://www.claes-distribution.be/recepten/${id}/${recipe.title.split(' ').join('-').toLowerCase()}`
-        const qrImage = await QRCode.toDataURL(url)
+        const qrImage = await QRCode.toDataURL(url, { errorCorrectionLevel: 'Q', type: 'image/png', margin: 2 })
 
         const lastMod = new Date()
         return reply
