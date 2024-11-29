@@ -1,5 +1,5 @@
 # ---- deps ----
-FROM groupclaes/npm:10 AS depedencies
+FROM groupclaes/esbuild AS depedencies
 WORKDIR /usr/src/app
 
 COPY package.json ./package.json
